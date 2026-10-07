@@ -276,7 +276,7 @@ powerbi-fashion-retail-marketing-analytics/
 
 1. **Clone this repository:**
    ```bash
-   git clone https://github.com/<your-username>/powerbi-fashion-retail-marketing-analytics.git
+   git clone https://github.com/thunx280-ctrl/powerbi-fashion-retail-marketing-analytics.git
    ```
 2. **Open the report:**
    * Double-click `pbix/Fashion_Retail_Marketing_Performance_Analytics.pbix` (Requires [Power BI Desktop](https://powerbi.microsoft.com/desktop/) version 2024 or later).
@@ -289,9 +289,9 @@ powerbi-fashion-retail-marketing-analytics/
 
 * **Author:** **Nguyễn Xuân Thu**
 * **Role:** Data Analyst (Specializing in Business Intelligence, E-Commerce & Growth Analytics)
-* **Email:** *[your-email@example.com]*
-* **LinkedIn:** *[https://linkedin.com/in/your-profile]*
-* **GitHub:** *[https://github.com/your-username]*
+* **Email:** *[thu.nx280@gmail.com]*
+* **LinkedIn:** *[https://linkedin.com/]*
+* **GitHub:** *[https://github.com/thunx280-ctrl]*
 
 ---
 *⭐ If you find this project insightful for your business or hiring review, please star the repository!*
