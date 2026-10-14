@@ -54,10 +54,6 @@ This project delivers a **tactical Business Intelligence solution** designed for
 ---
 
 ## 🌐 Interactive Dashboard Live Demo
-
-🔗 **[Click Here to Explore the Interactive Dashboard on NovyPro](https://www.novypro.com/)** *(Live Demo Link)*  
-*(Note: If viewing on mobile or desktop without Power BI installed, you can interact with the live report, slice by week, filter campaign types, and hover for tooltips via the link above).*
-
 ---
 
 ## 📊 Dashboard Walkthrough & Visuals
