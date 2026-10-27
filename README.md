@@ -362,14 +362,6 @@ The Power BI report is organized into **4 Analytical Pages** and **3 Specialized
 
 ---
 
-### Micro-Interactions & Report-Page Tooltips
-To preserve clean visual layouts while enabling instant diagnostic deep dives, three custom report-page tooltips were implemented:
-1. **`Tooltip_Campaign_type`:** Activates when hovering over campaign category visuals; displays CTR %, CPM, Total Customers, and New Customer Contribution curves.
-2. **`Tooltip_product_detail`:** Activates on SKU leaderboard visuals; renders the apparel product thumbnail image, unit price, COGS, profit margin, ROAS, and ROI.
-3. **`Tooltip_Campaign_detail`:** Activates on campaign matrix rows; displays the day-by-day trajectory of ad impressions, link clicks, comments, and private message inquiries.
-
----
-
 ## 💡 5. In-Depth Business Insights & Evidence
 
 ### Insight 1: Marketing is the Primary Growth Engine with High Capital Efficiency
