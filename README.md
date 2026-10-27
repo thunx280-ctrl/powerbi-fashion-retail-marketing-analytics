@@ -12,41 +12,17 @@
 
 ## 📌 Table of Contents
 1. [Background & Business Context](#-1-background--business-context)
-   - [1.1 Executive Overview & Business Landscape](#11-executive-overview--business-landscape)
-   - [1.2 Key Headline Results & Performance Scale](#12-key-headline-results--performance-scale)
-   - [1.3 Core Business Questions Answered](#13-core-business-questions-answered)
 2. [Design Thinking Process](#-2-design-thinking-process)
-   - [Stage 1: Empathize — Stakeholder Discovery & Context](#stage-1-empathize--stakeholder-discovery--context)
-   - [Stage 2: Define Point of View (POV) — Dual Northstars & Growth Formula](#stage-2-define-point-of-view-pov--dual-northstars--growth-formula)
-   - [Stage 3: Ideate — 3-Layer Information Architecture & Layout](#stage-3-ideate--3-layer-information-architecture--layout)
-   - [Stage 4: Prototype — Visual Selection Matrix & Wireframing](#stage-4-prototype--visual-selection-matrix--wireframing)
-   - [Stage 5: Review & Iterate — Usability Testing & Refinements](#stage-5-review--iterate--usability-testing--refinements)
 3. [Data Architecture & Modeling](#-3-data-architecture--modeling)
-   - [3.1 Data Pipeline & ETL Transformation](#31-data-pipeline--etl-transformation)
-   - [3.2 Kimball Star Schema Architecture](#32-kimball-star-schema-architecture)
-   - [3.3 Table Summary & Grain Specifications](#33-table-summary--grain-specifications)
-   - [3.4 Comprehensive Data Dictionary](#34-comprehensive-data-dictionary)
 4. [Interactive Dashboard Architecture & Visuals](#-4-interactive-dashboard-architecture--visuals)
-   - [Page 1: Executive Overview](#page-1-executive-overview)
-   - [Page 2: Campaign Performance Analysis](#page-2-campaign-performance-analysis)
-   - [Page 3: Product & Merchandising Analysis](#page-3-product--merchandising-analysis)
-   - [Page 4: Strategic Insights & Recommendations](#page-4-strategic-insights--recommendations)
-   - [Micro-Interactions & Report-Page Tooltips](#micro-interactions--report-page-tooltips)
 5. [In-Depth Business Insights & Evidence](#-5-in-depth-business-insights--evidence)
-   - [Insight 1: Marketing is the Primary Growth Engine with High Capital Efficiency](#insight-1-marketing-is-the-primary-growth-engine-with-high-capital-efficiency)
-   - [Insight 2: Severe Revenue Concentration in a Small Basket of "Hero SKUs"](#insight-2-severe-revenue-concentration-in-a-small-basket-of-hero-skus)
-   - [Insight 3: Capital Allocation Mismatch — High-ROAS Underfunded vs Over-Budget Bleeders](#insight-3-capital-allocation-mismatch--high-roas-underfunded-vs-over-budget-bleeders)
-   - [Insight 4: Significant Scalable Headroom in Prospecting Acquisition Funnels](#insight-4-significant-scalable-headroom-in-prospecting-acquisition-funnels)
-6. [Prioritized Strategic Action Matrix](#-6-prioritized-strategic-action-matrix)
-7. [Advanced DAX Formula Engineering](#-7-advanced-dax-formula-engineering)
-8. [Repository Structure & How to Reproduce](#-8-repository-structure--how-to-reproduce)
-9. [Author & Contact](#-9-author--contact)
+7. [Author & Contact](#-9-author--contact)
 
 ---
 
 ## 🏢 1. Background & Business Context
 
-### 1.1 Executive Overview & Business Landscape
+### 1.1 Executive Overview & Business
 In modern multichannel fashion retail and e-commerce, digital advertising serves as the principal growth lever. However, fashion retail leadership consistently faces a critical operational blind spot: **marketing ad expenditure and point-of-sale (POS) transactional receipts reside in completely disconnected data silos**. 
 
 Ad managers optimize campaigns based on vanity front-end metrics (Impressions, Clicks, CTR, Cost per Message), while retail merchandisers and sales directors track rear-view gross turnover, discounting, and inventory stockouts. Without end-to-end attribution linking paid ad campaigns to SKU-level cash receipts, leadership cannot objectively verify:
@@ -56,18 +32,9 @@ Ad managers optimize campaigns based on vanity front-end metrics (Impressions, C
 
 This project delivers a **full-funnel Business Intelligence Control Tower** designed specifically for the **Senior Marketing Manager** and **Sales Director**. Spanning May 2024 transactional operations across 2,858 successful orders, 3,451 order lines, and 1,000+ daily campaign performance logs, this dashboard unifies the conversion journey from **Impression $\rightarrow$ Click $\rightarrow$ Message $\rightarrow$ Completed Purchase**.
 
-```mermaid
-flowchart LR
-    A["Ad Impression<br/>(dim_mkt_camp_cost)"] --> B["Click & CTR<br/>(Link Traffic)"]
-    B --> C["Message & Inquiry<br/>(Inbox & Comments)"]
-    C --> D["SKU Attribution<br/>(fact_mkt_camp_by_sku)"]
-    D --> E["POS Order Fulfillment<br/>(fact_order)"]
-    E --> F["Net Cash Revenue & ROAS<br/>(Commercial Return)"]
-```
-
 ---
 
-### 1.2 Key Headline Results & Performance Scale
+### 1.2 Key Headline Finding
 
 | Metric Category | Performance Indicator | Benchmark / Scale | Analytical Interpretation |
 | :--- | :---: | :---: | :--- |
@@ -90,20 +57,7 @@ flowchart LR
 
 ## 🧠 2. Design Thinking Process
 
-To ensure the Business Intelligence solution solves authentic operational bottlenecks rather than producing decorative vanity charts, development adhered strictly to the **5-Stage User-Centric Design Thinking Framework** documented in `docs/Design Thinking.xlsx`.
-
-```mermaid
-flowchart LR
-    A["Stage 1: Empathize<br/>(5W1H & Empathy Map)"] --> B["Stage 2: Define POV<br/>(Northstars & Growth Formula)"]
-    B --> C["Stage 3: Ideate<br/>(3-Layer Metric Architecture)"]
-    C --> D["Stage 4: Prototype<br/>(Wireframes & Micro-UX)"]
-    D --> E["Stage 5: Review & Iterate<br/>(Usability Validation)"]
-```
-
----
-
-### Stage 1: Empathize — Stakeholder Discovery & Context
-In Stage 1, we immersed ourselves in the operating cadence of the **Senior Marketing Manager** and **Sales Director** to inventory their decision rhythms, analytical friction points, and data accessibility constraints.
+### Stage 1: Empathize 
 
 ![Stage 1: Empathize](assets/framework/stage_1_empathize.png)
 
@@ -134,7 +88,6 @@ In Stage 1, we immersed ourselves in the operating cadence of the **Senior Marke
 ---
 
 ### Stage 2: Define Point of View (POV) — Dual Northstars & Growth Formula
-Stage 2 synthesized user empathy into explicit mathematical hypotheses, defining the strategic Northstars and analytical growth equations that govern the entire reporting architecture.
 
 ![Stage 2: Define POV](assets/framework/stage_2_define_pov.png)
 
@@ -163,7 +116,6 @@ $$\text{Marketing Revenue} = (\text{Impressions} \times \text{CTR} \times \text{
 ---
 
 ### Stage 3: Ideate — 3-Layer Information Architecture & Layout
-To prevent cognitive overload while satisfying both executive scanning and operational deep dives, Stage 3 structured the report according to a **3-Layer Information Hierarchy**.
 
 ![Stage 3: Ideate](assets/framework/stage_3_ideate.png)
 
@@ -181,7 +133,6 @@ To prevent cognitive overload while satisfying both executive scanning and opera
 ---
 
 ### Stage 4: Prototype — Visual Selection Matrix & Wireframing
-Stage 4 converted conceptual wireframes into interactive Power BI artifacts, selecting specialized visualization types designed to expose commercial variance instantly.
 
 ![Stage 4: Prototype](assets/framework/stage_4_prototype.png)
 
@@ -198,7 +149,6 @@ Stage 4 converted conceptual wireframes into interactive Power BI artifacts, sel
 ---
 
 ### Stage 5: Review & Iterate — Usability Testing & Refinements
-Stage 5 subjected the prototype to rigorous usability audits and stakeholder feedback loops, refining the interface across four major engineering iterations.
 
 ![Stage 5: Review & Iterate](assets/framework/stage_5_review_iterate.png)
 
@@ -221,80 +171,10 @@ The raw dataset (`data/Fashion_Analyst_Dataset.xlsx`) contained multi-source dat
 
 ---
 
-### 3.2 Kimball Star Schema Architecture
+### 3.2 Star Schema
 The data model strictly implements the **Kimball Dimensional Modeling Star Schema**, establishing 1-to-Many (`1:*`) relationships with unidirectional cross-filtering to guarantee optimal DAX calculation performance and prevent ambiguous filter propagation.
 
-```mermaid
-erDiagram
-    dim_danh_sach_san_pham ||--o{ fact_order : "1:N (Ma_san_pham)"
-    dim_danh_sach_san_pham ||--o{ fact_mkt_camp_by_sku_cost : "1:N (Ma_san_pham)"
-    dim_mkt_camp_cost ||--o{ fact_mkt_camp_by_sku_cost : "1:N (Ten_chien_dich)"
-    Dim_Date ||--o{ fact_order : "1:N (Date)"
-    Dim_Date ||--o{ fact_mkt_camp_by_sku_cost : "1:N (Date)"
-    Dim_Date ||--o{ dim_mkt_camp_cost : "1:N (Date)"
 
-    fact_order {
-        string ID PK "Unique order line item ID"
-        datetime Thoi_gian "Order transaction timestamp"
-        string Nguon "Sales channel (Admin, Web, POS)"
-        string Ma_khach_hang "Customer identifier"
-        string Cap_do_khach_hang "Customer tier segment"
-        string Ma_san_pham FK "Product SKU foreign key"
-        decimal Gia "Gross sales revenue (VND)"
-        int So_luong "Quantity purchased"
-        decimal Gia_von "Cost of Goods Sold (COGS)"
-        decimal Chiet_khau "Promotional discount applied"
-        string Trang_thai "Fulfillment order status"
-    }
-
-    fact_mkt_camp_by_sku_cost {
-        string Ten_chien_dich FK "Campaign name foreign key"
-        date Ngay "Ad spend recording date"
-        string Ma_san_pham FK "SKU foreign key"
-        decimal Tien_da_chay "Attributed ad spend per SKU"
-        decimal Ngan_sach "Allocated SKU budget"
-        int Inbox "Inboxes / messages initiated"
-        int Comments "Social post comments"
-        int Impressions "Ad impressions delivered"
-        int SL_ban_theo_Campaign "Attributed units sold"
-    }
-
-    dim_mkt_camp_cost {
-        string Ten_chien_dich PK "Unique marketing campaign name"
-        date Ngay "Campaign execution date"
-        decimal So_tien_da_chi_tieu "Actual marketing spend (VND)"
-        decimal Ngan_sach_chien_dich "Approved campaign budget"
-        string Loai_ngan_sach "Budget type (Daily / Lifetime)"
-        decimal CPM "Cost per 1,000 impressions"
-        decimal CPC "Cost per link click"
-        int Luot_hien_thi "Total impressions delivered"
-        int Click "Total link clicks"
-    }
-
-    dim_danh_sach_san_pham {
-        string Ma_san_pham PK "Unique SKU code"
-        string Ten_san_pham "Official apparel product name"
-        string Danh_muc "Merchandise category"
-        string Thuong_hieu "Product brand / collection"
-        string Mau_sac "Garment color attribute"
-        string Chat_lieu "Fabric material specification"
-        decimal Gia_nhap "Initial wholesale purchase price"
-        decimal Gia_ban "Retail list price"
-        decimal Gia_von "Inventory manufacturing cost"
-        string Trang_thai "Commercial status (Active, New)"
-    }
-
-    Dim_Date {
-        date Date PK "Standard calendar date key"
-        int Year "Calendar year (2024)"
-        int Month "Month number (1-12)"
-        string MonthName "Month name (May)"
-        int Day "Day of month (1-31)"
-        int Week "Week number of year"
-        int WeekOfMonth "Calendar week of month (W1-W5)"
-        string DayOfWeek "Day name (Mon-Sun)"
-    }
-```
 
 ---
 
@@ -310,7 +190,7 @@ erDiagram
 
 ---
 
-### 3.4 Comprehensive Data Dictionary
+### 3.4 Data Dictionary
 
 <details>
 <summary><b>📊 1. fact_order (POS Retail Transaction Orders) — Click to expand</b></summary>
@@ -549,19 +429,6 @@ To preserve clean visual layouts while enabling instant diagnostic deep dives, t
 
 ## 🚀 6. Prioritized Strategic Action Matrix
 
-```mermaid
-flowchart TD
-    A["Omnichannel Growth Strategy"] --> B["P1: Scale High-ROAS Hero SKUs"]
-    A --> C["P2: Cut Off Budget Bleeders"]
-    A --> D["P3: Expand Prospecting Headroom"]
-    A --> E["P4: Build Organic Retention Moat"]
-
-    B --> B1["Increase daily budget caps +15-20% on Audrey & Lisa<br/>Enforce supplier inventory buffer SLAs"]
-    C --> C1["Pause or re-engineer ad sets with ROAS < 4.0x<br/>Reallocate ~40M VND/mo to top performers"]
-    D --> D1["Scale Prospecting ad sets with ROAS > 9.0x<br/>Maintain Retargeting as automated conversion catcher"]
-    E --> E1["Implement VIP loyalty & automated CRM post-purchase flows<br/>Elevate Direct Revenue share from 36.7% to 45%+"]
-```
-
 | Priority | Strategic Initiative | Target Area / Owner | Concrete Action Items | Expected Business Impact & Target KPI |
 | :---: | :--- | :---: | :--- | :--- |
 | **P1**<br/>Immediate | **Scale Budget Caps on Hero SKUs & Secure Inventory Buffer** | Performance Marketing & SCM Planners | • Increase daily spend caps by **15–20%** on `AUDREY SHIRT LAL new`, `LISA DRESS`, and `KINO DRESS`.<br/>• Establish a minimum 3-week inventory buffer SLA with garment manufacturers to prevent stockouts during peak ad scaling. | • Capture an estimated **+250M–350M VND** incremental monthly revenue while maintaining ROAS > 8.0x.<br/>• Eliminate lost sales from hero SKU stockouts. |
@@ -571,147 +438,7 @@ flowchart TD
 
 ---
 
-## 🧮 7. Advanced DAX Formula Engineering
-
-Below is a curated selection of enterprise-grade DAX measures implemented in the Power BI model, adhering to clean architecture, explicit filter context management (`CALCULATE`), and descriptive variable formatting (`VAR/RETURN`).
-
-### 1. Return on Ad Spend (ROAS)
-Calculates capital efficiency by dividing attributed marketing revenue by actual digital ad spend, protected against division-by-zero errors.
-```dax
-ROAS = 
-VAR _MktRevenue = [MKT Revenue by Camp]
-VAR _MktSpend = [MKT Spend]
-RETURN
-    DIVIDE(
-        _MktRevenue,
-        _MktSpend,
-        0
-    )
-```
-
----
-
-### 2. Marketing Revenue Contribution Percentage
-Measures the proportion of total enterprise turnover generated by digital marketing campaigns.
-```dax
-MKT Revenue Contribution % = 
-VAR _MktRevenue = [MKT Revenue by Camp]
-VAR _TotalRevenue = [Total Revenue]
-RETURN
-    DIVIDE(
-        _MktRevenue,
-        _TotalRevenue,
-        0
-    )
-```
-
----
-
-### 3. Budget Utilization Rate
-Monitors ad spend pacing by comparing actual expenditure against approved budget caps.
-```dax
-% Budget Utilization = 
-VAR _ActualSpend = [MKT Spend]
-VAR _AllocatedBudget = [MKT Budget]
-RETURN
-    DIVIDE(
-        _ActualSpend,
-        _AllocatedBudget,
-        0
-    )
-```
-
----
-
-### 4. Week-over-Week (WoW) Marketing Spend Variance (Time Intelligence)
-Computes the percentage shift in advertising expenditure compared to the preceding 7-day calendar cycle.
-```dax
-MKT Spend vs LW % = 
-VAR _CurrentSpend = [MKT Spend]
-VAR _LastWeekSpend = 
-    CALCULATE(
-        [MKT Spend],
-        DATEADD('Dim_Date'[Date], -7, DAY)
-    )
-RETURN
-    DIVIDE(
-        _CurrentSpend - _LastWeekSpend,
-        _LastWeekSpend,
-        0
-    )
-```
-
----
-
-### 5. Dynamic KPI Card Formatted Label (UX Enhancement)
-Generates dynamic Unicode formatted strings for executive scorecards, automatically rendering directional variance indicators and percentage deltas.
-```dax
-MTK ROAS Label WoW = 
-VAR _VarPct = [MKT ROAS vs LW %]
-RETURN
-    IF(
-        ISBLANK(_VarPct),
-        "- vs LW",
-        IF(
-            _VarPct >= 0,
-            "▲ +" & FORMAT(_VarPct, "0.0%") & " vs LW",
-            "▼ " & FORMAT(_VarPct, "0.0%") & " vs LW"
-        )
-    )
-```
-
----
-
-## 📁 8. Repository Structure & How to Reproduce
-
-### Repository Directory Tree
-```
-powerbi-fashion-retail-marketing-analytics/
-├── assets/
-│   ├── dashboards/               # High-resolution dashboard screenshots
-│   │   ├── 01_Executive_Overview.png
-│   │   ├── 02_Campaign_Analysis.png
-│   │   ├── 03_Product_Analysis.png
-│   │   ├── 04_Insight_Recommendations.png
-│   │   └── Fashion_Retail_Marketing_Performance_Analytics.pdf
-│   └── framework/                # Generated Design Thinking visual infographics (Stages 1-5)
-│       ├── generate_all_stages.py
-│       ├── stage_1_empathize.png
-│       ├── stage_2_define_pov.png
-│       ├── stage_3_ideate.png
-│       ├── stage_4_prototype.png
-│       └── stage_5_review_iterate.png
-├── data/
-│   ├── data_dictionary.md        # Supplementary table and schema documentation
-│   └── Fashion_Analyst_Dataset.xlsx # Sanitized source transactional & campaign dataset
-├── docs/
-│   ├── Design Thinking.xlsx      # Official user-centric Design Thinking blueprint workbook
-│   └── design_thinking_framework.md # 5W1H, Empathy map, and Growth Formula documentation
-├── pbix/
-│   └── Fashion_Retail_Marketing_Performance_Analytics.pbix # Official production Power BI Desktop model
-├── .gitignore                    # Excludes backups, caches, and local configurations
-└── README.md                     # Comprehensive Master Portfolio Documentation
-```
-
----
-
-### How to Reproduce & Open the Project
-1. **Clone this repository to your local machine:**
-   ```bash
-   git clone https://github.com/thunx280-ctrl/powerbi-fashion-retail-marketing-analytics.git
-   ```
-2. **Open the Power BI Report:**
-   * Double-click `pbix/Fashion_Retail_Marketing_Performance_Analytics.pbix` (Requires [Power BI Desktop](https://powerbi.microsoft.com/desktop/) May 2024 version or later).
-3. **Data Source Configuration (if required):**
-   * If Power BI prompts to update data paths:
-     1. Navigate to **Home $\rightarrow$ Transform Data $\rightarrow$ Data source settings**.
-     2. Select `Fashion_Analyst_Dataset.xlsx` and click **Change Source**.
-     3. Point the path to the localized `data/Fashion_Analyst_Dataset.xlsx` within your cloned repository folder.
-     4. Click **Apply Changes** to refresh queries.
-
----
-
-## 👤 9. Author & Contact
+## 👤 7. Author & Contact
 
 * **Author:** **Nguyễn Xuân Thu**
 * **Role:** Data Analyst / Business Intelligence Specialist
