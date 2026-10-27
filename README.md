@@ -174,7 +174,7 @@ The raw dataset (`data/Fashion_Analyst_Dataset.xlsx`) contained multi-source dat
 ### 3.2 Star Schema
 The data model strictly implements the **Kimball Dimensional Modeling Star Schema**, establishing 1-to-Many (`1:*`) relationships with unidirectional cross-filtering to guarantee optimal DAX calculation performance and prevent ambiguous filter propagation.
 
-
+<img width="1796" height="1785" alt="{F109DFD9-E14B-41BD-9CB9-22AA4AD30ED0}" src="https://github.com/user-attachments/assets/72c86569-6a77-4a51-94f0-bc19ddf7a23b" />
 
 ---
 
@@ -313,18 +313,6 @@ The data model strictly implements the **Kimball Dimensional Modeling Star Schem
 
 The Power BI report is organized into **4 Analytical Pages** and **3 Specialized Micro-Interaction Tooltips**, engineered to guide stakeholders seamlessly from high-level corporate health to operational root-cause diagnostics.
 
-```
-Interactive Dashboard Architecture:
-├── Page 1: Executive Overview (Corporate Pulse & Growth Trajectory)
-├── Page 2: Campaign Performance Analysis (Ad Set Efficiency & Scatter Matrix)
-├── Page 3: Product & Merchandising Analysis (Catalog Performance & Paid vs Organic Split)
-├── Page 4: Strategic Insights & Recommendations (Finding -> Evidence -> Impact -> Action)
-└── Micro-UX Tooltip Canvases:
-    ├── Tooltip_Campaign_type (Funnel metrics: CTR, CPM, New Customer Rate)
-    ├── Tooltip_product_detail (SKU Photo, Unit Economics, ROAS & ROI)
-    └── Tooltip_Campaign_detail (Daily Trajectory: Impressions, Clicks, Inquiries)
-```
-
 ---
 
 ### Page 1: Executive Overview
@@ -439,14 +427,8 @@ To preserve clean visual layouts while enabling instant diagnostic deep dives, t
 ---
 
 ## 👤 7. Author & Contact
-
 * **Author:** **Nguyễn Xuân Thu**
-* **Role:** Data Analyst / Business Intelligence Specialist
 * **Specialization:** E-Commerce Growth Analytics, Marketing Attribution Modeling, Retail Merchandising BI
 * **Email:** [thu.nx280@gmail.com](mailto:thu.nx280@gmail.com)
-* **LinkedIn:** [https://linkedin.com/](https://linkedin.com/)
 * **GitHub:** [https://github.com/thunx280-ctrl](https://github.com/thunx280-ctrl)
-* **Project Repository:** [powerbi-fashion-retail-marketing-analytics](https://github.com/thunx280-ctrl/powerbi-fashion-retail-marketing-analytics)
 
----
-*⭐ If you find this business intelligence project insightful for your business, research, or hiring evaluation, please consider starring this repository!*
