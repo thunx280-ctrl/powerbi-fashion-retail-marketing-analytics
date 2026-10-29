@@ -24,7 +24,7 @@ flowchart LR
   * Khó nhận diện danh mục sản phẩm/SKU chủ lực để tối ưu phân bổ ngân sách.
 * **When & Where:** Được sử dụng định kỳ hàng tuần (Weekly Performance Review) và hàng tháng (Monthly Budget Allocation Meeting).
 * **Why:** Nhằm cắt giảm lãng phí ngân sách quảng cáo, tối đa hóa tỷ suất sinh lời trên chi phí quảng cáo (**ROAS**), và gia tăng doanh thu tổng thể.
-* **How:** Cung cấp báo cáo trực quan cho phép so sánh hiệu suất theo thời gian, theo dõi phễu chuyển đổi từ Click $\rightarrow$ Message $\rightarrow$ Order, và phân loại hiệu suất sản phẩm.
+* **How:** Cung cấp báo cáo trực quan cho phép so sánh hiệu suất theo thời gian, theo dõi phễu chuyển đổi từ Click → Message → Order, và phân loại hiệu suất sản phẩm.
 
 ### 2. Empathy Map (Bản đồ thấu cảm)
 * **Suy nghĩ & Cảm xúc (Thinking & Feeling):** 
@@ -49,11 +49,12 @@ flowchart LR
 * **Northstar 1 (Quy mô giá trị):** **Marketing Revenue** (Doanh thu đóng góp từ kênh Marketing)
   * *Tại sao chọn:* Đây là thước đo trực tiếp nhất về đóng góp thương mại của Marketing đối với toàn công ty.
 * **Northstar 2 (Hiệu suất tài chính):** **ROAS (Return on Ad Spend)**
-  * *Công thức:* $\text{ROAS} = \frac{\text{Marketing Revenue}}{\text{Marketing Spend}}$
+  * *Công thức:* `ROAS = Marketing Revenue / Marketing Spend`
   * *Tại sao chọn:* Đảm bảo quy mô doanh thu không được đánh đổi bằng việc "đốt tiền" vô tội vạ.
 
 ### 2. Công thức tăng trưởng (Growth Formula)
 $$\text{Total Revenue} = \text{Marketing Revenue} + \text{Direct Revenue}$$
+
 $$\text{Marketing Revenue} = \text{MKT Spend} \times \text{ROAS} = (\text{Impressions} \times \text{CTR} \times \text{CPC}) \times \text{Conversion Rate} \times \text{AOV}$$
 
 ---
@@ -83,4 +84,4 @@ Báo cáo được tổ chức theo mô hình **3 Tầng thông tin (3-Layer Inf
 * **Version 3 (Bản hoàn thiện cao cấp - Final):**
   * Tích hợp **Field Parameters** cho phép người dùng linh hoạt hoán đổi góc nhìn (Top N, chọn Dimension sản phẩm).
   * Xây dựng **Report Page Tooltips** giúp xem nhanh chi tiết chiến dịch và thông tin sản phẩm mà không làm rối màn hình chính.
-  * Bổ sung trang **Insight & Recommendations** đúc kết các phát hiện chiến lược theo mô hình **Finding $\rightarrow$ Evidence $\rightarrow$ Business Impact $\rightarrow$ Actionable Recommendations**.
+  * Bổ sung trang **Insight & Recommendations** đúc kết các phát hiện chiến lược theo mô hình **Finding → Evidence → Business Impact → Actionable Recommendations**.

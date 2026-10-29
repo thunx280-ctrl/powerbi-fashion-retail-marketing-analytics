@@ -31,7 +31,7 @@ Ad managers optimize campaigns based on vanity front-end metrics (Impressions, C
 * Which apparel categories and SKUs justify heavy promotional ad spend versus those sustained by organic customer pull.
 * How to dynamically adjust ad spend pacing week-over-week (WoW) to protect bottom-line operating margins.
 
-This project delivers a **full-funnel Business Intelligence Control Tower** designed specifically for the **Senior Marketing Manager** and **Sales Director**. Spanning May 2024 transactional operations across 2,858 successful orders, 3,451 order lines, and 1,000+ daily campaign performance logs, this dashboard unifies the conversion journey from **Impression $\rightarrow$ Click $\rightarrow$ Message $\rightarrow$ Completed Purchase**.
+This project delivers a **full-funnel Business Intelligence Control Tower** designed specifically for the **Senior Marketing Manager** and **Sales Director**. Spanning May 2024 transactional operations across 2,858 successful orders, 3,451 order lines, and 1,000+ daily campaign performance logs, this dashboard unifies the conversion journey from **Impression → Click → Message → Completed Purchase**.
 
 ---
 
@@ -95,17 +95,20 @@ This project delivers a **full-funnel Business Intelligence Control Tower** desi
 #### 1. Dual Northstar Metrics Hypothesis
 * **Northstar 1 (Scale & Commercial Contribution): Marketing Revenue**
   * *Measurement Target:* Total gross sales revenue directly attributed to digital marketing campaigns.
-  * *Supporting Metric:* **Marketing Revenue Contribution %** ($\frac{\text{Marketing Revenue}}{\text{Total Revenue}}$).
+  * *Supporting Metric:* **Marketing Revenue Contribution %** (`Marketing Revenue / Total Revenue`).
   * *Strategic Rationale:* Validates marketing's commercial contribution to total enterprise cash flow.
 * **Northstar 2 (Capital Efficiency & Financial Return): Return on Ad Spend (ROAS)**
   * *Measurement Target:* Ratio of attributed sales revenue generated per unit of ad currency invested.
-  * *Formula:* $\text{ROAS} = \frac{\text{Marketing Revenue}}{\text{Marketing Spend}}$.
-  * *Supporting Metric:* **% Budget Utilization** ($\frac{\text{Actual Spend}}{\text{Allocated Budget}}$).
+  * *Formula:* `ROAS = Marketing Revenue / Marketing Spend`.
+  * *Supporting Metric:* **% Budget Utilization** (`Actual Spend / Allocated Budget`).
   * *Strategic Rationale:* Guarantees that revenue growth is not driven by reckless, margin-diluting ad spend.
 
 #### 2. Omnichannel Growth Equation
+
 $$\text{Total Retail Revenue} = \text{Marketing Revenue} + \text{Direct / Organic Revenue}$$
+
 $$\text{Marketing Revenue} = \text{Marketing Spend} \times \text{Blended ROAS}$$
+
 $$\text{Marketing Revenue} = (\text{Impressions} \times \text{CTR} \times \text{CPC}) \times \text{Message-to-Order Conversion Rate} \times \text{Average Order Value (AOV)}$$
 
 #### 3. Four Analytical Perspectives (POV Lenses)
@@ -145,7 +148,7 @@ $$\text{Marketing Revenue} = (\text{Impressions} \times \text{CTR} \times \text{
 
 #### 2. Design System & Accessibility Standards
 * **Theme & Palette:** Configured with Power BI's **Accessible Orchid** design system — utilizing sophisticated dark slate backgrounds, high-contrast lavender/orchid focal accents, and emerald/rose semantic variance indicators.
-* **Ergonomics:** Strict Z-pattern layout flow (Macro Scorecards across top $\rightarrow$ Directional Trends in center $\rightarrow$ Granular breakdown tables at bottom).
+* **Ergonomics:** Strict Z-pattern layout flow (Macro Scorecards across top → Directional Trends in center → Granular breakdown tables at bottom).
 
 ---
 
@@ -157,7 +160,7 @@ $$\text{Marketing Revenue} = (\text{Impressions} \times \text{CTR} \times \text{
 1. **Iteration 1 (Data Pipeline & Schema Normalization):** Resolved severe many-to-many attribution risks between daily campaign records and transactional order lines by engineering an analytical Star Schema with conformed Date and Product dimensions.
 2. **Iteration 2 (Time Intelligence & Dynamic Context):** Upgraded static scorecards with DAX Time Intelligence, embedding week-over-week (WoW) variance percentages with conditional directional arrows (`▲ +12.5% vs LW`).
 3. **Iteration 3 (Micro-Interactions & Drillthrough):** Developed 3 dedicated report-page tooltip canvases enabling instant inspection of SKU imagery, product unit economics, and campaign daily spend pacing upon hover.
-4. **Iteration 4 (Executive Synthesis & Strategic Cockpit):** Engineered Page 4 structured around the rigorous **Finding $\rightarrow$ Evidence $\rightarrow$ Business Impact $\rightarrow$ Actionable Recommendation** framework to ensure seamless leadership sign-off.
+4. **Iteration 4 (Executive Synthesis & Strategic Cockpit):** Engineered Page 4 structured around the rigorous **Finding → Evidence → Business Impact → Actionable Recommendation** framework to ensure seamless leadership sign-off.
 
 ---
 
@@ -356,7 +359,7 @@ The Power BI report is organized into **4 Analytical Pages** and **3 Specialized
 
 ### Page 4: Strategic Insights & Recommendations
 * **Target Audience:** C-Suite Leadership, Marketing & Sales Department Heads.
-* **Core Analytical Mandate:** Directly bridge the gap between business intelligence and executive decision-making using the standardized **Finding $\rightarrow$ Evidence $\rightarrow$ Business Impact $\rightarrow$ Actionable Recommendation** framework.
+* **Core Analytical Mandate:** Directly bridge the gap between business intelligence and executive decision-making using the standardized **Finding → Evidence → Business Impact → Actionable Recommendation** framework.
 
 ![Strategic Insights](assets/dashboards/04_Insight_Recommendations.png)
 
